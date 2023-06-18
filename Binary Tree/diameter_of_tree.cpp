@@ -11,14 +11,14 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-int treeDimeter(TreeNode *root, int &dimeter)
+int treeDiameter(TreeNode *root, int &diameter)
 {
     if(root == NULL)
         return 0;
 
-    int lh = treeDimeter(root->left, dimeter);
-    int rh = treeDimeter(root->right, dimeter);
-    dimeter = max(dimeter, lh+rh);
+    int lh = treeDiameter(root->left, diameter);
+    int rh = treeDiameter(root->right, diameter);
+    diameter = max(diameter, lh+rh);
 
     return 1+max(lh,rh);
 }
